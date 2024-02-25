@@ -11,7 +11,7 @@ html {
 
 body {
   font-family: type.$font;
-  color: hsl(0, 27%, 90%);
+  color: var.$primary-very-light;
   display: grid;
   gap: 1.25rem;
   justify-content: center;
@@ -24,16 +24,34 @@ body {
 
 h1,
 h2 {
-  color: var.$primary-very-light;
   text-align: center;
 }
 
-h1 {
-  font-size: 2em;
-  line-height: 1.15;
-  font-weight: 900;
-  letter-spacing: 0.1em;
+.title {
 
+  &__heading {
+    font-size: 1.8em;
+    line-height: 1.25;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+  }
+
+  &__subheading {
+    font-size: 1.5em;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    &--by {
+      display: block;
+      font-size: 0.75em;
+    }
+
+    &--by:before,
+    &--by:after {
+      content: '~';
+    }
+  }
 }
 
 header,
@@ -45,9 +63,9 @@ footer {
 .rule {
   display: block;
   margin-block: 1.5rem;
-  border: 1px solid var.$primary-very-light;
+  border: 2px solid var.$primary-very-light;
   margin: 1.5rem 0;
-
+  opacity: 0.7;
 }
 
 a,
@@ -55,6 +73,22 @@ a:visited {
   color: var.$primary-light;
   text-decoration: none;
   text-decoration: underline;
-  text-underline-offset: 0.2em;
-  transition: color 0.3s;
+  text-underline-offset: 0.4em;
+  opacity: 0.9;
+  transition: opacity 0.7s;
+}
+
+a:hover {
+  color: var.$primary-very-light;
+  opacity: 1;
+}
+
+.footer {
+  margin-block: 2rem;
+  font-size: 0.75em;
+
+  &__reference:before,
+  &__reference:after {
+    content: '~';
+  }
 }
