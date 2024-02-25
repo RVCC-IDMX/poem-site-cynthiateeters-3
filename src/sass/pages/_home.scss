@@ -2,15 +2,59 @@
 @use "../abstracts/variables" as var;
 @use "../base/typography" as type;
 
+html {
+  background-color: var.$bg-very-dark;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("../images/simon-berger-1XqFYQiMgOs-unsplash.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 body {
   font-family: type.$font;
-  background-color: var.$bg-very-light;
+  color: hsl(0, 27%, 90%);
+  display: grid;
+  gap: 1.25rem;
+  justify-content: center;
   width: min(100% - 2rem, 60ch);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 2;
   margin-inline: auto;
-  margin-block: 4rem;
+  margin-block: 2rem;
+}
+
+h1,
+h2 {
+  color: var.$primary-very-light;
+  text-align: center;
 }
 
 h1 {
-  color: var.$primary-color;
-  text-align: center;
+  font-size: 2em;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+
+}
+
+header,
+main,
+footer {
+  margin-inline: auto;
+}
+
+.rule {
+  display: block;
+  margin-block: 1.5rem;
+  border: 1px solid var.$primary-very-light;
+  margin: 1.5rem 0;
+
+}
+
+a,
+a:visited {
+  color: var.$primary-light;
+  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color 0.3s;
 }
